@@ -96,6 +96,13 @@ proxy-groups:
     - { name: 新加坡节点, type: url-test, proxies: [新加坡01, 新加坡02, 新加坡03, 新加坡04, 新加坡05, 新加坡06, 新加坡07, 新加坡08, 新加坡09, 新加坡10], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
     - { name: 自动选择, type: url-test, proxies: ['剩余流量：100 GB', 套餐到期：2024-04-19, '香港01-最新域名 55laomao.com', 香港02, 香港03, 香港04, 香港05, 香港06, 香港07, 香港08, 香港09, 香港10, 香港11, 香港12, 香港13, 香港14, 香港15, 香港16, 香港17, 香港18, 香港19, 香港20, 日本01, 日本02, 日本03, 日本04, 日本05, 日本06, 日本07, 日本08, 日本09, 日本10, 新加坡01, 新加坡02, 新加坡03, 新加坡04, 新加坡05, 新加坡06, 新加坡07, 新加坡08, 新加坡09, 新加坡10, 台湾01, 台湾02, 台湾03, 台湾04, 台湾05, 台湾06, 台湾07, 台湾08, 台湾09, 台湾10, 美国01, 美国02, 美国03, 美国04, 美国05, 美国06, 美国07, 美国08, 美国09, 美国10], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
     - { name: 故障转移, type: fallback, proxies: ['剩余流量：100 GB', 套餐到期：2024-04-19, '香港01-最新域名 55laomao.com', 香港02, 香港03, 香港04, 香港05, 香港06, 香港07, 香港08, 香港09, 香港10, 香港11, 香港12, 香港13, 香港14, 香港15, 香港16, 香港17, 香港18, 香港19, 香港20, 日本01, 日本02, 日本03, 日本04, 日本05, 日本06, 日本07, 日本08, 日本09, 日本10, 新加坡01, 新加坡02, 新加坡03, 新加坡04, 新加坡05, 新加坡06, 新加坡07, 新加坡08, 新加坡09, 新加坡10, 台湾01, 台湾02, 台湾03, 台湾04, 台湾05, 台湾06, 台湾07, 台湾08, 台湾09, 台湾10, 美国01, 美国02, 美国03, 美国04, 美国05, 美国06, 美国07, 美国08, 美国09, 美国10], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
+rule-providers:
+    tiktok:
+        behavior: "classical"
+        type: "http"
+        url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml"
+        interval: 86400
+        path: ./tiktok.yaml
 rules:
     - 'DOMAIN,01.laomao02.xyz,DIRECT'
     - 'DOMAIN,fatcat.trafficmanager.net,DIRECT'
@@ -9285,15 +9292,7 @@ rules:
     - 'DOMAIN-SUFFIX,pornhubpremium.com,🌍 国外媒体'
     - 'DOMAIN-SUFFIX,skyking.com.tw,🌍 国外媒体'
     - 'DOMAIN,hamifans.emome.net,🌍 国外媒体'
-    - 'DOMAIN-SUFFIX,byteoversea.com,🌍 国外媒体'
-    - 'DOMAIN-SUFFIX,ibytedtos.com,🌍 国外媒体'
-    - 'DOMAIN-SUFFIX,muscdn.com,🌍 国外媒体'
-    - 'DOMAIN-SUFFIX,musical.ly,🌍 国外媒体'
-    - 'DOMAIN-SUFFIX,tiktok.com,🌍 国外媒体'
-    - 'DOMAIN-SUFFIX,tik-tokapi.com,🌍 国外媒体'
-    - 'DOMAIN-SUFFIX,tiktokcdn.com,🌍 国外媒体'
-    - 'DOMAIN-SUFFIX,tiktokv.com,🌍 国外媒体'
-    - 'DOMAIN-KEYWORD,-tiktokcdn-com,🌍 国外媒体'
+    - 'RULE-SET,tiktok,美国节点'
     - 'DOMAIN-SUFFIX,tver.jp,🌍 国外媒体'
     - 'DOMAIN,edge.api.brightcove.com,🌍 国外媒体'
     - 'DOMAIN-SUFFIX,jtvnw.net,🌍 国外媒体'
@@ -9962,7 +9961,6 @@ rules:
     - 'DOMAIN-SUFFIX,hdslb.com,🎯 全球直连'
     - 'DOMAIN-SUFFIX,feiliao.com,🎯 全球直连'
     - 'DOMAIN-SUFFIX,pstatp.com,🎯 全球直连'
-    - 'DOMAIN-SUFFIX,snssdk.com,🎯 全球直连'
     - 'DOMAIN-SUFFIX,iesdouyin.com,🎯 全球直连'
     - 'DOMAIN-SUFFIX,toutiao.com,🎯 全球直连'
     - 'DOMAIN-SUFFIX,cctv.com,🎯 全球直连'
